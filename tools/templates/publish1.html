@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>publish license</title>
+    <link href="static/css/license.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="column">
+    <a href="www.baidu.com">license发布</a>
+    <a href="">升级包</a>
+    <a href="/">root秘钥</a>
+
+</div>
+<div class="publisher">
+    <h1>license 生成参数</h1>
+    <form action="/license" method="post" id="license-form">
+        <span class="project">项目名称</span>
+        <input class="inputbox" type="text" name='projectname' placeholder="项目名称">
+        <br/>
+        <span class="project">项目版本</span>
+        <input class="inputbox" type="text" name="projectversion" placeholder="版本号">
+        <br/>
+        <span>上传machineinfo文件</span>
+        <br/>
+        <span>下载license文件</span>
+        <br/>
+
+        <span class="dns">DNS权限 -N</span>
+        <select name="dns">
+            <option class="dns">v0</option>
+            <option class="dns">v1</option>
+            <option class="dns">v2</option>
+            <option class="dns">v3</option>
+        </select>
+        <span>QPS -Q</span>
+        <input type="text" class="qps" placeholder="可不填，默认为500000">
+        <br/>
+        <span class="gslb">GSLB权限 -A</span>
+        <select name="gslb">
+            <option class="gslb">v0</option>
+            <option class="gslb">v1</option>
+        </select>
+        <br/>
+        <span class="dhcp">DHCP权限 -H</span>
+        <select name="dhcp">
+            <option class="dhcp">v0</option>
+            <option class="dhcp">v1</option>
+            <option class="dhcp">v2</option>
+        </select>
+        <span>LPS -L</span>
+        <input type="text" class="lps" placeholder="可不填">
+        <br/>
+        <span>REG -R</span>
+        <input type="radio" name="reg" class="reg" value="0" >
+        <input type="radio" name="reg" class="reg" value="1" >
+        <br/>
+
+        <span>license开始时间 -s</span>
+        <input type="radio" name="stime" class="stime" value="0" >
+        <input type="radio" name="stime" class="stime" value="1" >
+        <br/>
+        <span>license使用时间 -D</span>
+        <input type="text" class="inputbox" placeholder="输入整数">
+        <br/>
+        <span>远端鉴权 -S</span>
+        <input type="radio" name="auth" class="auth" value="0" >
+        <input type="radio" name="auth" class="auth" value="1" >
+        <br/>
+        <span>秘钥定期改变 -m</span>
+        <input type="radio" name="root_change_password" class="root_change_password" value="0" >
+        <input type="radio" name="root_change_password" class="root_change_password" value="1" >
+        <br/>
+        <span>usr_license -u</span>
+        <input type="radio" name="usr_license" class="usr_license" value="0" >
+        <input type="radio" name="usr_license" class="usr_license" value="1" >
+        <br/>
+        <span>control_node_num -P</span>
+        <input type="radio" name="control_node_num" class="control_node_num" value="0" >
+        <input type="radio" name="control_node_num" class="control_node_num" value="1" >
+        <br/>
+        <span>T</span>
+        <input type="radio" name="T" class="T" value="0" >
+        <input type="radio" name="T" class="T" value="1" >
+        <br/>
+        <span>V</span>
+        <input type="radio" name="V" class="V" value="0" >
+        <input type="radio" name="V" class="V" value="1" >
+        <br/>
+        <span>user_name -U</span>
+        <input type="radio" name="user_name" class="user_name" value="0" >
+        <input type="radio" name="user_name" class="user_name" value="1" >
+        <br/>
+        <span>t</span>
+        <input type="radio" name="t" class="t" value="0" >
+        <input type="radio" name="t" class="t" value="1" >
+        <br/>
+        <span>device_type -M</span>
+        <input type="radio" name="device_type" class="device_type" value="0" >
+        <input type="radio" name="device_type" class="device_type" value="1" >
+        <br/>
+        <p>提交前请确认参数</p>
+        <input type="submit" value="提-交"/>
+
+    </form>
+    <br/>
+
+</div>
+<br/>
+    <p>这里是root秘钥提交</p>
+
+    <div>
+        <form class="getPassword" action="/getpassword" method="POST">
+            <input id="passwordCode" type='text' name='rootpw' placeholder="root秘钥串">
+            <input type="submit" value="提交">
+        </form>
+
+    </div>
+</body>
+</html>

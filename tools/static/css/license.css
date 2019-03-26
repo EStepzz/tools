@@ -1,0 +1,23 @@
+.publisher{
+    width:500px;
+    padding: 10px;
+    margin: auto;
+    border: 1px;
+}
+.publisher h1{
+    text-align: center;
+}
+.publisher form{
+    padding: 10px;
+    border: 1px;
+    float: left;
+}
+.publisher .inputbox{
+    width: 150px;
+    padding:1px;
+    margin-left:70px;
+}
+.publisher .project{
+
+    margin-right: 70px;
+}
